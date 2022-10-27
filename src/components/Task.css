@@ -1,0 +1,9 @@
+.boton{
+    display:flex;
+    justify-content: flex-end;
+}
+.btn{
+    background-color: red;
+    margin-right: 35px;
+    margin-top: 30px;
+}

@@ -1,0 +1,50 @@
+#root {
+height: 100%;
+width: 100%;
+
+
+}
+.container {
+  width: 30vw;
+  height: 50vh;
+  margin: auto;
+  background-color: rgb(222, 226, 226);
+}
+@media (min-width: 400px) {
+  .container {
+    width: 90vw;
+    height: 50vh;
+    margin: auto;
+    background-color: rgb(222, 226, 226);
+  }
+
+  .Header {
+    margin-bottom: 15px;
+  }
+}
+@media (min-width: 800px) {
+  .container {
+    width: 40vw;
+    height: 35vh;
+    margin: auto;
+    background-color: rgb(222, 226, 226);
+  }
+
+  .Header {
+    margin-bottom: 15px;
+  }
+  .icono1{
+    margin-left: 10px;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+      width: 20vw;
+      height: 50vh;
+      margin: auto;
+      background-color: rgb(222, 226, 226);
+    }
+    .Header {
+      margin-bottom: 15px;
+    }
+}
