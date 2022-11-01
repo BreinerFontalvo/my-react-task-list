@@ -4,8 +4,8 @@ import "./Task.css";
     export const Task = () => {
     return (
         <div className="boton">
-            <button className="btn">Clear all</button>
+        <button className="btn">Clear all</button>
         </div>
-    )
+    );
     }
-    export default Task;
+    export default Task
