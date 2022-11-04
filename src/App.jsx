@@ -3,35 +3,30 @@ import "./App.css";
 import { useState, useEffect } from "react";
 import { TaskForm } from "./components/TaskForm";
 import Task from "./components/Task";
-import { List } from "./components/List";
-
+//AQUI INICIA TODO
 function App() {
-  //lista predeterminada
-  const [tasks, setTasks] = useState([{ name: "first" }]);
+  const [tasks, setTasks] = useState([]);
 
-  //funcion guardar en la lista
+  //FUNCION QUE NO GUARDE DOS DATOS IGUALES
   function createLista(taskName) {
     if (!tasks.find((task) => task.name === taskName)) {
-      setTasks([...tasks, { name: taskName }]);
+      setTasks([...tasks,{ name: taskName }]);
     }
-  }
+    
+  };
+  //GUARDANDO EL DATO EN UNA VARIABLE
   useEffect(() => {
     let data = localStorage.getItem("tasks");
     if (data) {
       setTasks(JSON.parse(data));
     }
-  }, []);
-
+  },[]);
+  //RENDERIZAMOS EL DATO
   useEffect(() => {
     localStorage.setItem("tasks", JSON.stringify(tasks));
   }, [tasks]);
 
-  // const cleanTasks = () => {
-  //   setTaskItems(taskItems.filter((task)));
-  //   setshowCompleted(false);
-  // };
-
-  //tabla
+  //TABLA
   return (
     <div className="container">
       <Header createLista={createLista} />
@@ -42,3 +37,4 @@ function App() {
 }
 
 export default App;
+//FINALIZA TODO

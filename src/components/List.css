@@ -1,0 +1,82 @@
+/*container tarea*/
+div.caj1{
+    width:100%;
+    height:50%;
+    color:black;
+    text-align:center;
+    display: flex;
+    align-items:center;
+    justify-content:center;
+}
+div.caj2{
+    height:50%;
+    width:100%;
+    /* overflow-y:scroll;
+    scroll-behavior: smooth; */
+}
+div.list{
+    width: 81%;
+    padding: 5px;
+    background-color:white;
+    margin:0px 20px 5px;
+    border-radius: 5px;
+    display: flex;
+}
+h4{
+    color:white;
+}
+/*input*/
+div.input{
+    width:50%;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.label{
+    width: 100%;
+    height: 40%;
+    border-radius:10px;
+    text-decoration: none;
+}
+.label-underline{
+    text-decoration: line-through;
+}
+h5{
+    color: green;
+    text-align: center;
+    font-size: 12px;
+}
+.texto{
+        width: 40%;
+        background-color: black;
+        padding: 5px;
+        margin: 0 100px 10px;
+        border-radius: 18px;
+}
+/*iconos*/
+div.iconos{
+    width:50%;
+    display: flex;
+    justify-content: flex-end;
+}
+.icono1 {
+    color: green;
+    margin-left: auto;
+
+}
+.icono2{
+    color: red;
+    margin-left: auto;
+}
+input.agregar{
+    width: 50%;
+    text-align: center;
+    background-color: rgb(197, 197, 197);
+    color: black;
+    border-radius:15px;
+    margin-left: 35px;
+}
+button.edi{
+    background-color:rgb(156, 233, 40);
+    border-radius: 20px;
+}

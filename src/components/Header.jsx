@@ -5,22 +5,23 @@ import { useState } from "react";
 
 export const Header = (props) => {
     console.log(props)
-    const [lista, setLista] = useState(" ");
+    const [lista, setLista] = useState("");
     
     const onSubmit = (e) => {
         e.preventDefault();
         props.createLista(lista);
         setLista('');
+        window.location.reload();
     };
 
     //inicio para agregar tarea
     return (
         <div className="Header">
-        <h1>Todo App</h1>
+        <h1>LISTA DE TAREAS</h1>
         <form onSubmit={onSubmit} className="formu">
             <input
             type="text" 
-            placeholder="Add your new todo"
+            placeholder="Agregar nueva tarea"
             value={lista}
             onChange={(e) => {
             setLista(e.target.value);

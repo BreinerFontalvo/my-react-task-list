@@ -1,79 +1,135 @@
 import { BiTrash } from "react-icons/bi";
+import { AiOutlineForm } from "react-icons/ai";
 import { useState } from "react";
-import "./TaskList.css";
-//aqui inicia la lista
+import "./List.css";
+
+//INICIA LISTA
 export const List = ({ task }) => {
-    const [marcado, setMarcado] = useState(false);
-    const [claseLabel, setClaseLabel] = useState("label");
-    //condicional
-    const tareaHecha = (e) => {
-        console.log(e);
-        if (marcado) {
-        setClaseLabel("label");
-        setMarcado(false);
-        } else {
-        setClaseLabel("label-underline");
-        setMarcado(true);
-        }
-    };
-    //desplegar mensaje
-    const [abrir, setAbrir] = useState(false);
-    const [claseTitulo, setClaseTitulo] = useState("");
+  const [marcado, setMarcado] = useState(false); //MARCADO TAREA
+  const [claseLabel, setClaseLabel] = useState("label"); //EDITAR LABEL
+  const [abrir, setAbrir] = useState(false); //DESPLIEGUE MENSAJE DE REALIZADO
+  const [claseTitulo, setClaseTitulo] = useState(""); //EDITAR LO QUE VA A SALIR
+  const [edit, setEdit] = useState(false); //DESPLIEGUE EDITAR TAREA
+  const [add, setAdd] = useState(""); //CONTENIDO DEL EDITAR
+  const [list2, setList2] = useState(""); //ALAMCENAR DATOS DEL EDITAR
 
-    const handleOpen = (e) => {
-        console.log(e);
-        if (abrir) {
-        setClaseTitulo(" ");
-        setAbrir(false);
-        } else {
-        setClaseTitulo("texto");
-        setAbrir(true);
-        }
-    };
+  //TAREA TACHADA
+  const tareaHecha = (e) => {
+    console.log(e);
+    if (marcado) {
+      setClaseLabel("label");
+      setMarcado(false);
+    } else {
+      setClaseLabel("label-underline");
+      setMarcado(true);
+    }
+  };
 
-    //eliminar
-    const handleOnClick = (e) => {
-        e.preventDefault();
-        let data = JSON.parse(localStorage.getItem("tasks"));
+  //DESPLEGAR MENSAJE
+  const handleOpen = (e) => {
+    console.log(e);
+    if (abrir) {
+      setClaseTitulo(" ");
+      setAbrir(false);
+    } else {
+      setClaseTitulo("texto");
+      setAbrir(true);
+    }
+  };
 
-        console.log(data);
+  //ELIMINAR
+  const handleOnClick = (e) => {
+    e.preventDefault();
+    let data = JSON.parse(localStorage.getItem("tasks"));
+    //ELIMINAR DATO SELECCIONADO
+    for (let i = 0; i < data.length; i++) {
+      if (data[i].name === task.name) {
+        data.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("tasks", JSON.stringify(data));
+    window.location.reload();
+  };
+  //FINALIZA ELIMINAR
 
-        for (let i = 0; i < data.length; i++) {
-        if (data[i].name === task.name) {
-            console.log("numero");
-            data.splice(i, 1);
-            break;
-        }
-        }
+  //EDITAR
+  //DESPLIEGUE EDITAR
+  const handleOnSubmit = () => {
+    if (edit) {
+      setEdit(false);
+      setAdd(" ");
+    } else {
+      setAdd("agregar");
+      setEdit(true);
+    }
+  };
+  //RECOJER EL DATO
+  const handleOnSubmit2 = (e) => {
+    e.preventDefault();
+    let array = localStorage.getItem("tasks");
+    array = JSON.parse(array);
+    //ACTUALIZAR EL DATO DE NUESTRA TAREA
+    for (let i = 0; i < array.length; i++) {
+      if (list2 == array[i].name) {
+        alert("la tarea ya existe");
+        break;
+      } else if (array[i].name == task.name) {
+        array[i].name = list2;
+      }
+    }
+    localStorage.setItem("tasks", JSON.stringify(array));
+    window.location.reload();
+  };
 
-        localStorage.setItem("tasks", JSON.stringify(data));
-        console.log(data);
-
-        console.log(task.name);
-        //localStorage.removeItem();
-        window.location.reload();
-    };
-
-    //inicia los inputss
-    return (
-        <>
-        <label className={claseLabel}>
-            <div className="list">
+  //INICIA LOS INPUTS
+  return (
+    <>
+      <label className={claseLabel}>
+        <div className="list">
+          <div className="input">
+            {/*NUESTRO INPUT*/}
             <input
-                type="checkbox"
-                onClick={handleOpen}
-                checked={marcado}
-                onChange={tareaHecha}
-                className="checkbox-round"
-                value="first-checkbox"
+              type="checkbox"
+              onClick={handleOpen}
+              checked={marcado}
+              onChange={tareaHecha}
+              className="checkbox-round"
+              value="first-checkbox"
             ></input>
             {task.name}
+          </div>
+          <div className="iconos">
+            {/* ELIMINAR */}
             <button onClick={handleOnClick}>
-                <BiTrash className="icono2" />
+              <BiTrash className="icono2" />
             </button>
-            </div>
-        </label>
-        {abrir ? <h5 className={claseTitulo}>Realizada</h5> : null}
-        </>
-    );
+            {/*EDITAR*/}
+            <button onClick={handleOnSubmit}>
+              <AiOutlineForm className="icono1" />
+            </button>
+          </div>
+        </div>
+      </label>
+      {/*DESPLIEGUE MENSAJE*/}
+      {abrir ? <h5 className={claseTitulo}>Realizada</h5> : null}
+      {/*DESPLIEGUE EDITAR*/}
+      {edit ? (
+        <form onSubmit={handleOnSubmit2}>
+          <input
+            type="text"
+            placeholder="Editar"
+            className={add}
+            onChange={(e) => {
+              setList2(e.target.value);
+            }}
+          ></input>
+          <button type="submit" className="edi">
+            Editar
+          </button>
+        </form>
+      ) : null}
+    </>
+  );
 };
+//FINALIZA TODO
