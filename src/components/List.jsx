@@ -2,7 +2,6 @@ import { BiTrash } from "react-icons/bi";
 import { AiOutlineForm } from "react-icons/ai";
 import { useState } from "react";
 import "./List.css";
-
 //INICIA LISTA
 export const List = ({ task }) => {
   const [marcado, setMarcado] = useState(false); //MARCADO TAREA
@@ -26,8 +25,7 @@ export const List = ({ task }) => {
   };
 
   //DESPLEGAR MENSAJE
-  const handleOpen = (e) => {
-    console.log(e);
+  const handleOpen = () => {
     if (abrir) {
       setClaseTitulo(" ");
       setAbrir(false);
@@ -38,7 +36,7 @@ export const List = ({ task }) => {
   };
 
   //ELIMINAR
-  const handleOnClick = (e) => {
+    const useDelete = (e) => {
     e.preventDefault();
     let data = JSON.parse(localStorage.getItem("tasks"));
     //ELIMINAR DATO SELECCIONADO
@@ -55,7 +53,7 @@ export const List = ({ task }) => {
 
   //EDITAR
   //DESPLIEGUE EDITAR
-  const handleOnSubmit = () => {
+  const useEdit = () => {
     if (edit) {
       setEdit(false);
       setAdd(" ");
@@ -79,7 +77,7 @@ export const List = ({ task }) => {
       }
     }
     localStorage.setItem("tasks", JSON.stringify(array));
-    window.location.reload();
+    window.location.reload(); 
   };
 
   //INICIA LOS INPUTS
@@ -101,11 +99,11 @@ export const List = ({ task }) => {
           </div>
           <div className="iconos">
             {/* ELIMINAR */}
-            <button onClick={handleOnClick}>
+            <button onClick={useDelete}>
               <BiTrash className="icono2" />
             </button>
             {/*EDITAR*/}
-            <button onClick={handleOnSubmit}>
+            <button onClick={useEdit}>
               <AiOutlineForm className="icono1" />
             </button>
           </div>

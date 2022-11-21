@@ -14,13 +14,6 @@ export const TaskForm = ({ tasks }) => {
       {tasks.map((task) => (
         <List task={task} key={task.name} />
       ))}
-      {/* (estado &&{
-      <div>
-        <b>
-          
-          <h4>hola</h4>
-        </b>
-      </div>}) */}
     </div>
   );
 };

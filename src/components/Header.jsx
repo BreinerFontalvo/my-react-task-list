@@ -9,9 +9,9 @@ export const Header = (props) => {
     
     const onSubmit = (e) => {
         e.preventDefault();
-        props.createLista(lista);
+        props.handleOnSubmit(lista);
         setLista('');
-        window.location.reload();
+       /*  window.location.reload(); */
     };
 
     //inicio para agregar tarea

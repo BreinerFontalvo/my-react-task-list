@@ -19,7 +19,6 @@ export const Task = () => {
 
 return (
   <div className="cajita">
- 
     <section className="pendiente">
       <h3 className="parrafo"> Tienes {log} tareas pendientes </h3>
     </section>
