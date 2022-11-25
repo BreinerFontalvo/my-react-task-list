@@ -1,12 +1,17 @@
 import { useState, useEffect } from "react";
 
 function useTasks() {
-  const [tasks, setTasks] = useState([]);
+  const [tasks, setTasks] = useState([
+    {
+      name:"ee",
+      description: "aa",
+    }
+  ]);
 
   //FUNCION QUE NO GUARDE DOS DATOS IGUALES
-  const handleOnSubmit = (taskName) => {
+  const handleOnSubmit = (taskName, taskDescription) => {
     if (!tasks.find((task) => task.name === taskName)) {
-      setTasks([...tasks, { name: taskName }]);
+      setTasks([...tasks, { name: taskName , description: taskDescription}]);
     }
   };
   //GUARDANDO EL DATO EN UNA VARIABLE

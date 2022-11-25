@@ -11,6 +11,7 @@ export const List = ({ task }) => {
   const [edit, setEdit] = useState(false); //DESPLIEGUE EDITAR TAREA
   const [add, setAdd] = useState(""); //CONTENIDO DEL EDITAR
   const [list2, setList2] = useState(""); //ALAMCENAR DATOS DEL EDITAR
+  
 
   //TAREA TACHADA
   const tareaHecha = (e) => {
@@ -109,8 +110,12 @@ export const List = ({ task }) => {
           </div>
         </div>
       </label>
+      <section className="yes">
+      <section className="descrip">{task.description}</section>
+      {abrir ? <h5 className={claseTitulo}>✅</h5> : null}
+      </section>
       {/*DESPLIEGUE MENSAJE*/}
-      {abrir ? <h5 className={claseTitulo}>Realizada</h5> : null}
+
       {/*DESPLIEGUE EDITAR*/}
       {edit ? (
         <form onSubmit={handleOnSubmit2}>

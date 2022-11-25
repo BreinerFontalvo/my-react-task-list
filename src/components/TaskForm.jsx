@@ -12,7 +12,7 @@ export const TaskForm = ({ tasks }) => {
   return (
     <div className="caj2">
       {tasks.map((task) => (
-        <List task={task} key={task.name} />
+        <List task={task} key={task.name} description={task.description} />
       ))}
     </div>
   );
