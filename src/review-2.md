@@ -1,6 +1,6 @@
 ¿Qué es mi producto y para que sirve?
 
-Mi producto consta de una pequeña aplicacion en el cual los usuarios van a poder agregar su tareas c on una pequeña descripcion a una lista de tarea y tener un control de sus tareas por realizar.
+Mi producto consta de una pequeña aplicacion en el cual los usuarios van a poder agregar su tareas con una pequeña descripcion a una lista de tarea y tener un control de sus tareas por realizar.
 
 ¿Cuáles son las funcionalidades más importantes y porque los usuarios las usarían?
 
@@ -8,4 +8,4 @@ Las funcionalidades mas importantes de mi aplicativo es que en ella cada vez que
 
 ¿Cuáles son las funcionalidades que podrías incluir en el futuro?
 
-las funcionalidades en las cuales tenemos pensado incluir en un futuro son agregar un modo oscuro debido a que muchos usuarios les gusta tener sus app de etse modo, tambien hacer una pequeña barra de navegacion en la cual el usuario podra pasearse por nuestra app.
+las funcionalidades en las cuales tenemos pensado incluir en un futuro son agregar un modo oscuro debido a que muchos usuarios les gusta tener sus app de este modo, tambien hacer una pequeña barra de navegacion en la cual el usuario podra pasearse por nuestra app.
