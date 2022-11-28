@@ -20,11 +20,11 @@ export const Task = () => {
 return (
   <div className="cajita">
     <section className="pendiente">
-      <h3 className="parrafo"> Tienes {log} tareas pendientes </h3>
+      <h3 className="parrafo"> You have {log} pending tasks</h3>
     </section>
     <section className="boton">
       <button onClick={handleOnClick} className="btn">
-        Limpiar
+        Clean
       </button>
     </section>
   </div>

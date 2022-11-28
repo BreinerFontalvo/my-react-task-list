@@ -1,12 +1,7 @@
 import { useState, useEffect } from "react";
 
 function useTasks() {
-  const [tasks, setTasks] = useState([
-    {
-      name:"ee",
-      description: "aa",
-    }
-  ]);
+  const [tasks, setTasks] = useState([]);
 
   //FUNCION QUE NO GUARDE DOS DATOS IGUALES
   const handleOnSubmit = (taskName, taskDescription) => {

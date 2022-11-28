@@ -15,16 +15,17 @@ export const Header = (props) => {
         props.handleOnSubmit(lista, guardar);
         setLista('');
         setGuardar('');
+        window.location.reload();
         }
 
     //INICIO GUARDAR TAREAS HEADER
     return (
         <div className="Header">
-        <h1>LISTA DE TAREAS</h1>
+        <h1>TO DO LIST</h1>
         <form onSubmit={onSubmit} className="formu">
             <input
             type="text" 
-            placeholder="Agregar nueva tarea"
+            placeholder="Add a new task"
             value={lista}
             onChange={(e) => {
             setLista(e.target.value);
@@ -40,19 +41,16 @@ export const Header = (props) => {
             <input 
             type="text" 
             className="descripcion" 
-            placeholder="Agregar una descripción"
+            placeholder="Add a descriptión"
             value={guardar}
             onChange={(e) => {
                 setGuardar(e.target.value);
                 console.log(guardar)
             }}/> 
-                
-
         </form>
-            
             {
                 error ? (
-                    <span>muy corta</span>
+                    <span role="alert"> muy corta</span>
                     ):(<></>)
                 }
         </div>

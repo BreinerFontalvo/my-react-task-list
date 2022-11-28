@@ -1,19 +1,26 @@
-import Header from "./components/Header";
-import "./App.css";
-import { TaskForm } from "./components/TaskForm";
-import Task from "./components/Task";
-import useTasks from '../src/hooks/useTasks';
-//AQUI INICIA TODO
+import {lazy, Suspense} from 'react';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Menu from './components/Extras/Menu';
+
+  const Home= lazy(()=> import('./components/Extras/Home'))
+  const SobreNosotros= lazy(()=> import('./components/Extras/SobreNosotros'))
+  const Tareas= lazy(()=> import('./components/Extras/Tareas'))
+
 function App() {
 
-  const { handleOnSubmit, tasks}= useTasks();
-  //TABLA
   return (
-    <div className="container">
-      <Header handleOnSubmit={handleOnSubmit} />
-      <TaskForm tasks={tasks} />
-      <Task />
-    </div>
+    <>
+    <BrowserRouter>
+    <Menu/>
+    <Suspense fallback={<p>LOADING......</p>} >
+      <Routes>
+        <Route path="/Home" element={<Home />} />
+        <Route path="/SobreNosotros" element={< SobreNosotros/>} />
+        <Route path="/Tareas" element={<Tareas />} />
+      </Routes>
+      </Suspense>
+    </BrowserRouter>
+    </>
   );
 }
 
