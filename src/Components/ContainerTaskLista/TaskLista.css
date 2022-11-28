@@ -1,0 +1,35 @@
+.TaskLista{
+    height: 60%;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    background-image: url(../Imagenes/fondo2.jpg);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    box-shadow: rgba(0, 0, 0, 0.589) 0px 0px 15px 15px;
+    color: red;
+}
+.ContainerTareaPorHacer{
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: scroll;
+}
+.EliminarTodo_Container{
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.EliminarTodo{
+    height: 40px;
+    width: 80px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgb(6, 216, 248);
+    color: rgb(255, 0, 0);
+    cursor: pointer;
+    font-size: 15px;
+}

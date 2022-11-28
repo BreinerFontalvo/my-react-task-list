@@ -1,0 +1,90 @@
+.Container-Tareas {
+    height: auto;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.Tarea {
+    height: 25px;
+    width: 70%;
+    background-color: rgb(240, 240, 240);
+    border: none;
+    font-size: 20px;
+}
+
+.Lista-Tareas {
+    background-color: rgb(240, 240, 240);
+    width: 60%;
+    height: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    font-size: 25px;
+    margin: 5px;
+}
+.EditorDeTarea{
+    border: none;
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+    height: 20px;
+    width: 150px;
+    border: none;
+    box-shadow: rgb(147, 147, 146) 5px 5px 5px 5px;
+}
+.EditorDeTarea:hover{
+    font-size: 20px;
+    height: 30px;
+    width: 200px;
+    border-radius: 50px;
+    border: none;
+    color: rgb(0, 208, 255);
+}
+.BotonesDelet {
+    height: 25px;
+    width: 25px;
+    border: none;
+    margin: 2px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgb(255, 0, 0);
+    background-color: rgba(238, 1, 1, 0);
+    text-align: center;
+}
+
+.BotonEdit {
+    height: 25px;
+    width: 25px;
+    border: none;
+    margin: 2px;
+    font-size: 20px;
+    text-align: center;
+    cursor: pointer;
+    color: rgb(8, 181, 255);
+    background-color: rgba(238, 1, 1, 0);
+}
+
+.Marcador-Tareas{ 
+    float: left;
+    width: 1.3em;
+    height: 1.3em;
+    background-color: white;
+    border-radius: 50%;
+    vertical-align: middle;
+    border: 1px solid #ddd;
+    appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#Nuevo-marcador{ 
+    text-decoration: line-through;
+}
+.Marcador-Tareas:checked {
+    background-color: #fe0606;
+}
+
