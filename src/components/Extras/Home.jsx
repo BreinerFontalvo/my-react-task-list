@@ -1,6 +1,7 @@
 import React from 'react'
 import './home.css';
 import {useState} from 'react';
+import {Text, Button, Input , Box} from '@chakra-ui/react'
 
 export const Home = () => {
 
@@ -14,22 +15,24 @@ export const Home = () => {
 
 
     return (
-        <div className="home">
+        <Box>
             <form className="name" onSubmit={onSubmit}>
-            <input
-                className="nombre"
+            <Input
+                mr='20px'
+                borderRadius='30px'
+                border='none'
+                w='25%'
+                h='25%'
                 type="text"
-                name='user'
+                name="user"
                 placeholder="Typing your name"
-            ></input>
-            <button className="send" type="submit">
+            ></Input>
+            <Button bg="#ffcd3c" borderRadius="15px" type="submit">
                 Send
-            </button>
+            </Button>
             </form>
-            <section className="welcome">
-            <h1>Welcome {nombre} to do list</h1>
-            </section>
-        </div>
-    );
+            <Text fontSize="40px" ml='700px'>Welcome {nombre} to do list</Text>
+        </Box>
+        );
 }
 export default Home;

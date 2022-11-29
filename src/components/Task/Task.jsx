@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "./Task.css";
+import {Text} from '@chakra-ui/react'
 
 export const Task = () => {
     const [log, setLog] = useState(0);
@@ -20,7 +21,7 @@ export const Task = () => {
 return (
   <div className="cajita">
     <section className="pendiente">
-      <h3 className="parrafo"> You have {log} pending tasks</h3>
+      <Text color="white"> You have {log} pending tasks</Text>
     </section>
     <section className="boton">
       <button onClick={handleOnClick} className="btn">

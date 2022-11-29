@@ -2,17 +2,6 @@
     width: 100%;
     height:35%;
 }
-h1{
-    margin-bottom: 10px;
-    color: white;
-    text-align:center;
-}
-input[type="text"]{
-    width: 70%;
-    height: 30px;
-    border-radius:15px;
-    margin: 0 25px;
-}
 button.IconName{
     border:none;
     width: 35px;
@@ -25,11 +14,6 @@ svg.add{
     height:20px;
     color: #FFFF;
     margin: auto;
-}
-input.descripcion{
-    width:70%;
-    height:50px;
-    margin-top: 5px;
 }
 span{
     color:red;
