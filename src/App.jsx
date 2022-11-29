@@ -2,6 +2,7 @@ import {lazy, Suspense} from 'react';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Menu from './components/Extras/Menu';
 
+
   const Home= lazy(()=> import('./components/Extras/Home'))
   const SobreNosotros= lazy(()=> import('./components/Extras/SobreNosotros'))
   const Tareas= lazy(()=> import('./components/Extras/Tareas'))
