@@ -2,8 +2,9 @@ import React from 'react'
 import {Text, Box, Flex} from '@chakra-ui/react'
 
 export const SobreNosotros = () => {
+
     return (
-      <Box bg="#ffcd3c" w="50%" h="80%" m="auto" mt='120px' borderRadius='15px'>
+      <Box color='black' bg="#ffcd3c" w="50%" h="80%" m="auto" mt='120px' borderRadius='15px'>
         <Flex direction="column" align='center'justify="center">
           <h1>TO DO LIST</h1>
           <b>

@@ -2,6 +2,8 @@ import { BiTrash } from "react-icons/bi";
 import { AiOutlineForm } from "react-icons/ai";
 import { useState } from "react";
 import "./List.css";
+import {useColorModeValue, Input, Box, Button} from '@chakra-ui/react'
+
 //INICIA LISTA
 export const List = ({ task }) => {
   const [marcado, setMarcado] = useState(false); //MARCADO TAREA
@@ -80,24 +82,38 @@ export const List = ({ task }) => {
     localStorage.setItem("tasks", JSON.stringify(array));
     window.location.reload(); 
   };
-
   //INICIA LOS INPUTS
+
+  const bg= useColorModeValue('white', 'black');
+  const color= useColorModeValue('black', 'white')
+
   return (
     <>
       <label className={claseLabel}>
-        <div className="list">
-          <div className="input">
+        <Box
+          bg={bg}
+          w="78%"
+          p="5px"
+          display="flex"
+          mr="5px"
+          ml="28px"
+          borderRadius="5px"
+        >
+          <Box w="50%" h="30px" display="flex" gap="15px" alignItems="center">
             {/*NUESTRO INPUT*/}
-            <input
+            <Input
               type="checkbox"
+              bg={bg}
+              color={color}
+              w="20px"
+              h="20px"
               onClick={handleOpen}
               checked={marcado}
               onChange={tareaHecha}
-              className="checkbox-round"
               value="first-checkbox"
-            ></input>
+            ></Input>
             {task.name}
-          </div>
+          </Box>
           <div className="iconos">
             {/* ELIMINAR */}
             <button onClick={useDelete}>
@@ -108,11 +124,11 @@ export const List = ({ task }) => {
               <AiOutlineForm className="icono1" />
             </button>
           </div>
-        </div>
+        </Box>
       </label>
       <section className="yes">
-      <section className="descrip">{task.description}</section>
-      {abrir ? <h5 className={claseTitulo}>✅</h5> : null}
+        <section className="descrip">{task.description}</section>
+        {abrir ? <h5 className={claseTitulo}>✅</h5> : null}
       </section>
       {/*DESPLIEGUE MENSAJE*/}
 
@@ -127,9 +143,9 @@ export const List = ({ task }) => {
               setList2(e.target.value);
             }}
           ></input>
-          <button type="submit" className="edi">
+          <Button w='70px' h='25px' bg="rgb(156, 233, 40)" borderRadius="20px" mr='35px' ml='15px' mb='5px'type="submit">
             Editar
-          </button>
+          </Button>
         </form>
       ) : null}
     </>
